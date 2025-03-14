@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock Info</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Stock Portfolio</h1>
+    </header>
+
+    <main>
+        <div id="search-container">
+            <input type="text" id="searchInput" placeholder="Enter Ticker"> <button id="searchButton">Search</button> </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Ticker</th>
+                    <th>Company</th>
+                    <th>Price</th>
+                    <th>Market Cap</th>
+                    <th>P/E Ratio</th>
+                    <th>Sector</th>
+                </tr>
+            </thead>
+            <tbody id="stockTableBody">
+                </tbody>
+        </table>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
