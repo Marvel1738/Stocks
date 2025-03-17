@@ -11,26 +11,39 @@
         <h1>Stock Portfolio</h1>
     </header>
 
-    <main>
-        <div id="search-container">
-            <input type="text" id="searchInput" placeholder="Enter Ticker"> <button id="searchButton">Search</button>
-         </div>
+<main>
+    <div id="search-container">
+        <input type="text" id="searchInput" placeholder="Enter Ticker">
+        <button id="searchButton">Search</button>
+    </div>
 
-        <table>
-            <thead>
-                <tr>
-                    <th>Ticker</th>
-                    <th>Company</th>
-                    <th>Price</th>
-                    <th>Market Cap</th>
-                    <th>P/E Ratio</th>
-                    <th>Sector</th>
-                </tr>
-            </thead>
-            <tbody id="stockTableBody">
-                </tbody>
-        </table>
-    </main>
+    <!-- New Stock Form -->
+    <div id="addStockForm">
+        <input type="text" id="ticker" placeholder="Ticker">
+        <input type="text" id="companyName" placeholder="Company Name">
+        <input type="number" id="price" placeholder="Price">
+        <input type="number" id="marketCap" placeholder="Market Cap">
+        <input type="number" id="peRatio" placeholder="P/E Ratio">
+        <input type="text" id="sector" placeholder="Sector">
+        <button id="addStockButton">Add Stock</button>
+    </div>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Ticker</th>
+                <th>Company</th>
+                <th>Price</th>
+                <th>Market Cap</th>
+                <th>P/E Ratio</th>
+                <th>Sector</th>
+                <th>Actions</th> <!-- New column for Edit/Delete buttons -->
+            </tr>
+        </thead>
+        <tbody id="stockTableBody"></tbody>
+    </table>
+</main>
+
 
     <script src="script.js"></script>
 </body>

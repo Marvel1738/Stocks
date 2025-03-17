@@ -20,7 +20,7 @@ public class Stock {
     // Fields for the stock object same exact fields as the database table
     private String company_name;
     private double price;
-    private double market_cap;
+    private long market_cap;
     private double pe_ratio;
     private String sector;
 }

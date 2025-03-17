@@ -6,6 +6,7 @@ import com.simpleStockInfo.demo.model.Stock; // Import the Stock model
 import com.simpleStockInfo.demo.repository.StockRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,7 +16,10 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 
+@Configuration
 @RestController // Marks this class as a REST API controller
 @RequestMapping("/api/stocks") // Base URL for this controller's endpoints
 public class StockController {
@@ -31,34 +35,47 @@ public class StockController {
         return stockRepository.findAll(); // Return all stocks from the database
     }
 
-    @GetMapping("/{ticker}") // Handles GET requests to "/stocks/{ticker}"
-    public Stock getStockByTicker(@PathVariable String ticker) {
-        return stockRepository.findById(ticker).orElse(null); // Return the stock with the given ticker
+    @CrossOrigin(origins = "*") // Allow requests from any origin
+
+    @GetMapping("/{ticker}")
+    public ResponseEntity<?> getStock(@PathVariable String ticker) {
+        return stockRepository.findById(ticker)
+                .map(stock -> ResponseEntity.ok(stock))
+                .orElse(ResponseEntity.status(HttpStatus.NOT_FOUND).build());
     }
 
-    @PostMapping // Handles POST requests to "/stocks")
-    public Stock addStock(@RequestBody Stock stock) {
-        return stockRepository.save(stock); // Save the stock to the database
+    @CrossOrigin(origins = "*") // Allow requests from any origin
+    @PostMapping
+    public ResponseEntity<Stock> addStock(@RequestBody Stock stock) {
+        Stock savedStock = stockRepository.save(stock);
+        return ResponseEntity.status(HttpStatus.CREATED).body(savedStock);
     }
 
-    @PutMapping("/{ticker}") // Handles PUT requests to "/stocks/{ticker}"
-    public Stock updateStock(@PathVariable String ticker, @RequestBody Stock updatedStock) {
+    @CrossOrigin(origins = "*")
+    @PutMapping("/{ticker}")
+    public ResponseEntity<Stock> updateStock(@PathVariable String ticker, @RequestBody Stock updatedStock) {
         return stockRepository.findById(ticker)
                 .map(stock -> {
+                    // Update all stock fields
                     stock.setCompany_name(updatedStock.getCompany_name());
                     stock.setPrice(updatedStock.getPrice());
                     stock.setMarket_cap(updatedStock.getMarket_cap());
                     stock.setPe_ratio(updatedStock.getPe_ratio());
                     stock.setSector(updatedStock.getSector());
-                    return stockRepository.save(stock); // Saves updated stock
-                }).orElseThrow(() -> new RuntimeException("Stock not found"));
+
+                    Stock savedStock = stockRepository.save(stock);
+                    return ResponseEntity.ok(savedStock);
+                })
+                .orElse(ResponseEntity.notFound().build());
     }
 
-    // ✅ Delete a stock by ticker
+    @CrossOrigin(origins = "*") // Allow requests from any origin
     @DeleteMapping("/{ticker}")
-    public String deleteStock(@PathVariable String ticker) {
-        stockRepository.deleteById(ticker); // Deletes stock by ticker
-        return "Stock with ticker " + ticker + " deleted";
+    public ResponseEntity<Void> deleteStock(@PathVariable String ticker) {
+        if (!stockRepository.existsById(ticker)) {
+            return ResponseEntity.notFound().build();
+        }
+        stockRepository.deleteById(ticker);
+        return ResponseEntity.noContent().build();
     }
-
 }

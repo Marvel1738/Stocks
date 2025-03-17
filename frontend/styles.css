@@ -107,3 +107,29 @@ table input[type="number"] {
     border: 1px solid #ddd;
     border-radius: 4px;
 }
+
+#addStockForm {
+    margin: 20px auto;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+#addStockForm input {
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+#addStockButton {
+    padding: 8px 15px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#addStockButton:hover {
+    background-color: #0056b3;
+}
