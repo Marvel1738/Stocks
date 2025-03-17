@@ -1,135 +1,136 @@
-/* Apply a global font and background color */
 body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f4f4f4;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8f9fa;
     margin: 0;
-    padding: 0;
-    text-align: center;
+    padding: 20px;
+    color: #333;
+    line-height: 1.6;
 }
 
-/* Styling for the header */
 header {
-    background-color: #16005d;
+    background-color: #007bff;
     color: white;
-    padding: 5px;
-    font-size: 20px;
+    padding: 20px 0;
+    text-align: center;
+    margin-bottom: 30px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-/* Style for the table */
-table {
-    width: 80%;
-    margin: 10px auto;
-    border-collapse: collapse;
-    background: white;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+main {
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-/* Style for table headers and cells */
-th, td {
-    padding: 10px;
-    border: 1px solid #ddd;
-    text-align: left; /* Align text to the left */
-}
-
-/* Style for table headers */
-th {
-    background-color: #00095b;
-    color: white;
-}
-
-/* Hover effect for table rows */
-tbody tr:hover {
-    background-color: #f1f1f1;
-    cursor: pointer;
-}
-
-/* Added styles for the search container */
-#search-container {
-    margin: 20px auto;
-    width: 80%;
+#search-container,
+#addStockForm {
+    margin-bottom: 20px;
     text-align: center;
 }
 
-/* Style for the search input */
-#searchInput {
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    margin-right: 10px;
-    width: 200px;
-}
-
-/* Style for the search button */
-#searchButton {
-    padding: 10px 20px;
-    background-color: #0e006b;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-/* Hover effect for the search button */
-#searchButton:hover {
-    background-color: #006108;
-}
-
-/* Style for the edit/save buttons in the table */
-table button {
-    padding: 5px 10px;
-    margin: 5px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-/* Style for the save button (even buttons) */
-table button:nth-child(even) {
-    background-color: #4CAF50; /* Green */
-    color: white;
-}
-
-/* Style for the edit button (odd buttons) */
-table button:nth-child(odd) {
-    background-color: #04ff00; /* Blue */
-    color: white;
-}
-
-/* Hover effect for the table buttons */
-table button:hover {
-    opacity: 0.8;
-}
-
-/* Style for the price input in the table */
-table input[type="number"] {
-    width: 60px;
-    padding: 5px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-}
-
-#addStockForm {
-    margin: 20px auto;
-    display: flex;
-    gap: 10px;
-    justify-content: center;
-}
-
+#search-container input,
 #addStockForm input {
-    padding: 8px;
-    border: 1px solid #ddd;
+    padding: 12px 15px;
+    border: 1px solid #ced4da;
     border-radius: 4px;
+    margin: 5px;
+    width: 250px;
+    box-sizing: border-box;
 }
 
-#addStockButton {
-    padding: 8px 15px;
+#search-container button,
+#addStockForm button {
+    padding: 12px 20px;
     background-color: #007bff;
     color: white;
     border: none;
     border-radius: 4px;
     cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
-#addStockButton:hover {
+#search-container button:hover,
+#addStockForm button:hover {
     background-color: #0056b3;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: white;
+}
+
+th, td {
+    border: 1px solid #dee2e6;
+    padding: 15px;
+    text-align: left;
+}
+
+th {
+    background-color: #e9ecef;
+    font-weight: 600;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f8f9fa;
+}
+
+tbody tr:hover {
+    background-color: #e0f7fa;
+}
+
+table button {
+    padding: 8px 15px;
+    margin: 5px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.save-button {
+    background-color: #28a745;
+    color: white;
+}
+
+.save-button:hover {
+    background-color: #218838;
+}
+
+.delete-button {
+    background-color: #dc3545;
+    color: white;
+}
+
+.delete-button:hover {
+    background-color: #c82333;
+}
+
+table input[type="number"] {
+    width: 80px;
+    padding: 8px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    #search-container input,
+    #addStockForm input {
+        width: calc(50% - 10px);
+    }
+}
+
+@media (max-width: 480px) {
+    #search-container input,
+    #addStockForm input {
+        width: 100%;
+    }
+
+    th, td {
+        padding: 10px;
+        font-size: 0.9em;
+    }
 }
