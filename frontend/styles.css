@@ -9,16 +9,16 @@ body {
 
 /* Styling for the header */
 header {
-    background-color: #000000;
+    background-color: #16005d;
     color: white;
-    padding: 15px;
-    font-size: 24px;
+    padding: 5px;
+    font-size: 20px;
 }
 
 /* Style for the table */
 table {
     width: 80%;
-    margin: 20px auto;
+    margin: 10px auto;
     border-collapse: collapse;
     background: white;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
@@ -26,14 +26,14 @@ table {
 
 /* Style for table headers and cells */
 th, td {
-    padding: 12px;
+    padding: 10px;
     border: 1px solid #ddd;
     text-align: left; /* Align text to the left */
 }
 
 /* Style for table headers */
 th {
-    background-color: #00ff1e;
+    background-color: #00095b;
     color: white;
 }
 
@@ -62,7 +62,7 @@ tbody tr:hover {
 /* Style for the search button */
 #searchButton {
     padding: 10px 20px;
-    background-color: #00cf18;
+    background-color: #0e006b;
     color: white;
     border: none;
     border-radius: 4px;
