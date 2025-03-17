@@ -1,15 +1,16 @@
-Wanted to create a small scale full stack project to put together my knowlege of sql, spring, rest api, and vanilla frontend. 
-My first spring boot project.
+# Simple Stock Portfolio Application
 
-  ## Usage
+This project is a small-scale, full-stack application designed to consolidate knowledge of SQL, Spring Boot, REST APIs, and vanilla front-end development. It serves as my first comprehensive Spring Boot project.
 
-* **Viewing Stocks:** The stock data table will be displayed upon opening the application.
-* **Searching Stocks:** Enter a ticker symbol in the search input and click "Search".
-* **Updating Stocks:** Click "Edit" on a stock row, modify the values, and click "Save" (updated in database)
-* **Adding Stocks:** Click "Add Stock" and enter the details in the prompts (added to database) 
+## Usage
 
+* **Viewing Stocks:** The stock data table is displayed upon opening the application.
+* **Searching Stocks:** Enter a ticker symbol in the search input and click "Search" to view specific stock details. If no stock is found, an alert will be displayed.
+* **Updating Stocks:** Modify the editable fields (Price, Market Cap, P/E Ratio) directly in the table and click "Save" to update the stock information in the database.
+* **Deleting Stocks:** Click "Delete" on a stock row to remove the stock from the database.
+* **Adding Stocks:** Fill out the form fields (Ticker, Company Name, Price, Market Cap, P/E Ratio, Sector) and click "Add Stock" to add a new stock to the database.
 
-  ## Technologies Used
+## Technologies Used
 
 * **Backend:**
     * Spring Boot (Java)
@@ -18,40 +19,54 @@ My first spring boot project.
     * MySQL
 * **Frontend:**
     * HTML
-    * CSS
+    * CSS (Enhanced for improved responsiveness and visual appeal)
     * JavaScript (Vanilla)
- 
-  ## Future Enhancements
+
+## Recent Enhancements
+
+* **Improved Delete Functionality:** Resolved foreign key constraint issues to enable successful deletion of stocks.
+* **Enhanced Search Functionality:** Implemented precise stock searching by ticker symbol with error handling for non-existent stocks.
+* **Responsive and Professional UI:** Refined CSS for a more visually appealing and responsive user interface, ensuring a consistent experience across various screen sizes.
+
+## Future Enhancements
 
 * Implement user authentication and authorization.
-* Add more detailed stock information (e.g., historical data, charts) throught connecting through 3rd party api giving real time stock data
-* Improve the frontend UI/UX with a more modern design.
-* Add data validation and error handling for user inputs.
-* Implement sorting and filtering for the stock table.
+* Integrate a third-party API to fetch real-time stock data, including historical data and charts.
+* Transition the front-end to a modern JavaScript framework like React for improved UI/UX.
+* Add data validation and comprehensive error handling for user inputs.
+* Implement sorting and filtering options for the stock table.
 * Deploy the application to a cloud platform (e.g., Heroku, AWS).
-* Once completed will buy url and make the website public
+* Purchase a domain and make the website publicly accessible.
 
-  ## Setup and Installation
+## Setup and Installation
 
 1.  **Clone the Repository:**
+
     ```bash
     git clone [repository URL]
     cd [project directory]
     ```
+
 2.  **Database Setup:**
+
     * (Provide instructions on setting up your database: e.g., create a database schema, configure database credentials)
+
 3.  **Backend Setup:**
+
     * Navigate to the backend directory.
     * (If using Maven or Gradle) Build the project using:
+
         ```bash
         ./mvnw spring-boot:run # Maven
         ./gradlew bootRun # Gradle
         ```
+
     * The backend server will start on `http://localhost:8080`.
+
 4.  **Frontend Setup:**
+
     * Open `index.html` in your web browser.
 
 ## Author
 
 * [Marvel Bana] - [[Your GitHub Profile URL](https://github.com/Marvel1738)]
-
