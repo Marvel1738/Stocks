@@ -19,6 +19,16 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 
+/**
+ * StockController.java
+ *
+ * Purpose:
+ * This class serves as the REST API controller for managing stock information.
+ * It handles HTTP requests related to stocks, including retrieving, adding,
+ * updating, and deleting stock data. It interacts with the database through
+ * the StockRepository.
+ */
+
 @Configuration
 @RestController // Marks this class as a REST API controller
 @RequestMapping("/api/stocks") // Base URL for this controller's endpoints
