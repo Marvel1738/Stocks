@@ -38,6 +38,12 @@ This project is a small-scale, full-stack application designed to consolidate kn
 * Deploy the application to a cloud platform (e.g., Heroku, AWS).
 * Purchase a domain and make the website publicly accessible.
 
+## Database Schema
+
+The database schema is visualized in the following diagram:
+
+![Database Schema](Database.png)
+
 ## Setup and Installation
 
 1.  **Clone the Repository:**
@@ -49,9 +55,9 @@ This project is a small-scale, full-stack application designed to consolidate kn
 
 2.  **Database Setup:**
 
-    * (Provide instructions on setting up your database: e.g., create a database schema, configure database credentials)
+    *SQL script for creating the database schema: [here](script.sql).
 
-3.  **Backend Setup:**
+4.  **Backend Setup:**
 
     * Navigate to the backend directory.
     * (If using Maven or Gradle) Build the project using:
@@ -63,9 +69,10 @@ This project is a small-scale, full-stack application designed to consolidate kn
 
     * The backend server will start on `http://localhost:8080`.
 
-4.  **Frontend Setup:**
+5.  **Frontend Setup:**
 
     * Open `index.html` in your web browser.
+  
 
 ## Author
 
