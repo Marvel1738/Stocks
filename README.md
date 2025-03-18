@@ -41,16 +41,19 @@ This project is a small-scale, full-stack application designed to consolidate kn
 ## Key Takeaways
 
 * **Full-Stack Integration and Debugging:**
-    * This project showed me how much you need to pay attention to detail when configuring the connection between the front-end and back-end, even with Spring Boot's auto-configuration.
-    * I gained practical experience in troubleshooting API communication issues by using browser developer tools. By looking at the network requests and responses, I was able to identify and resolve problems in data formats and API endpoint mappings. This involved analyzing HTTP status codes and error messages to find and fix issues.
+    * Learned the importance of attention to detail when connecting the front-end and back-end, even with Spring Boot’s auto-configuration. Used browser developer tools to troubleshoot API communication issues by analyzing network requests, HTTP status codes, and error messages.
+ 
 * **RESTful API Development:**
-    * I solidified my understanding of RESTful API design principles by implementing CRUD (Create, Read, Update, Delete) operations and how its connected to HTTP methods (GET, POST, PUT, DELETE) to manage data between the front-end and back-end.
+    * Strengthened understanding of REST principles by implementing CRUD operations and mapping them to HTTP methods (GET, POST, PUT, DELETE).
+
 * **Database Interaction with JPA:**
-    * I learned key aspects of the Spring Data JPA like defining entities, creating repositories, and performing database operations without writing long SQL queries.
+    * Gained experience with Spring Data JPA, including defining entities, creating repositories, and performing database operations efficiently.
+
 * **Front-End Development with Vanilla JavaScript:**
-    * Soildified my knowlege of vanilla JavaScript, handling DOM manipulation, user events, and API requests.
+    * Solidified knowledge of vanilla JavaScript, handling DOM manipulation, user events, and API requests.
+
 * **Error Handling:**
-* Improved user experience with error handling, such as alerts for searching for a missing stock.
+    * Improved user experience by implementing alerts for missing stock searches.
 
 ## Database Schema
 
